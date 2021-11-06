@@ -1,0 +1,17 @@
+{
+    "name": "lorenzo/appointment-management-system",
+    "autoload": {
+        "psr-4": {
+            "Lorenzo\\AppointmentManagementSystem\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Lorenzo Catalano",
+            "email": "catalanolorenzo95@gmail.com"
+        }
+    ],
+    "require": {
+        "google/apiclient": "^2.11"
+    }
+}

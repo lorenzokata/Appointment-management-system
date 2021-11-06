@@ -1,5 +1,4 @@
 <?php
-
 if (isset($_POST['submit'])) {
 
     $username = $_POST['uid'];
@@ -14,7 +13,12 @@ if (isset($_POST['submit'])) {
     };
 
     loginUser($conn, $username, $pwd);
-} else {
+}
+elseif(isset($_POST['idtoken'])){
+    var_dump('CIAO');
+    header('location: ../login.php?error=emptyinput');
+}
+else {
     header('location: ../login.php');
     exit();
 }

@@ -14,6 +14,8 @@ include_once 'components/header.php'
             <input class="form-control my-2" type="password" name="pwdrepeat" placeholder="Repeat Password..">
             <button type="submit" name="submit">Sign-up</button>
         </form>
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
 
         <?php
         if (isset($_GET["error"])) {
@@ -44,5 +46,6 @@ include_once 'components/header.php'
         ?>
     </div>
 </section>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
 
 <?php include_once 'components/footer.php' ?>

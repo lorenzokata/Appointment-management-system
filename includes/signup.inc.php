@@ -46,4 +46,7 @@ if (isset($_POST["submit"])) {
     } 
         
     createUser($conn, $name, $email, $username, $pwd);
+}else {
+    header('location: ../login.php');
+    exit();
 }
