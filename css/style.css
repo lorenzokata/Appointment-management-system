@@ -1,1 +1,14 @@
-@import '../node_modules/bootstrap/dist/css/bootstrap.css';
+.popuperror{
+    text-align: center;
+    color: red;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.success{
+    color: green;
+}
+
+.ciao{
+    background-color: red;
+}

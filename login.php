@@ -2,17 +2,32 @@
     include_once 'components/header.php' 
 ?>
     <section>
-        <h2>login</h2>
-        <form action="includes/login.inc.php" method="POST">
+        <div class="container-sm">
+           <h2>Log In</h2>
+            <form action="includes/login.inc.php" method="POST">
 
-            <input type="text" name="name">
-            <input type="pass" name="pwd">
+                <input type="text" class="form-control my-2" name="uid" placeholder="Username/Email..">
+                <input type="password" class="form-control my-2" name="pwd" placeholder="Password..">
 
-            <button type="submit" name="submit">login</button>
-        </form>
+                <button type="submit" name="submit">login</button>
+            </form> 
+        </div>
+            
+        <?php
+        if (isset($_GET["error"])) {
+            switch ($_GET["error"]) {
+                case 'emptyinput':
+                    echo "<div class='alert alert-danger my-2'>Input vuoto</div>";
+                    break;
+                case 'wrongusername':
+                    echo "<div class='alert alert-danger my-2'>Username non valido</div>";
+                    break;
+                case 'wrongpwd':
+                    echo "<div class='alert alert-danger my-2'>Password non valida</div>";
+                    break;
+            }
+        }
+        ?>
     </section>
-
-</body>
-</html>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-<script src="js/app.js"></script>
+    
+<?php include_once 'components/footer.php' ?>

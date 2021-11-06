@@ -1,7 +1,12 @@
 <?php include_once 'components/header.php' ?>
 
-    <h1 class="text-center">PAGINA INIZIALE</h1>
-</body>
-</html>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-<script src="js/app.js"></script>
+<h1 class="text-center">PAGINA INIZIALE</h1>
+<?php 
+    if (isset($_GET['meta'])) {
+        if($_GET['meta'] == 'loggedout'){
+            echo "<div class='alert alert-alert my-2'>Hai sloggato</div>";
+        }
+        
+    }
+?>
+<?php include_once 'components/footer.php' ?>

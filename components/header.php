@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,6 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -24,12 +29,28 @@
                         </li>
                     </ul>
                     <ul class="navbar-nav mb-2 mb-lg-0 justify-content-end">
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="login.php">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link " aria-current="page" href="signup.php">Sign-in</a>
-                        </li>
+                        <?php
+                        if (isset($_SESSION["usersUid"])) {
+                            echo
+                            '<li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="login.php">' . $_SESSION['usersUid'] . '</a>
+                            </li>';
+                            echo 
+                            '<li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="includes/logout.inc.php">Logout</a>
+                            </li>';
+                        } else {
+                            echo '
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="login.php">Login</a>
+                            </li>';
+
+                            echo '
+                            <li class="nav-item">
+                                <a class="nav-link " aria-current="page" href="signup.php">Sign-in</a>
+                            </li>';
+                        }
+                        ?>
                     </ul>
                 </div>
             </div>
